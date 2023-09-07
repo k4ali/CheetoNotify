@@ -19,7 +19,7 @@
         components: { 'Notification': Notification },
         setup(): IComponentSetup
         {
-            const notificationStorage: Ref<string[]> = ref<string[]>([]);
+            const notificationStorage: Ref<string[]> = ref<string[]>(["test"]);
             const handlers: IComponentHandlers = {
                 showNotification: () => {
                     notificationStorage.value.push("test");
@@ -31,7 +31,7 @@
                 },
 
                 deleteNotification: (id: number) => {
-                    notificationStorage.value = notificationStorage.value.slice(1, id);
+                    notificationStorage.value = notificationStorage.value.slice(0, id);
                 }
             };
 

@@ -5,5 +5,11 @@
     })
 </script>
 <template>
-    <div class="notification-box"></div>
+    <div class="notification-box">
+        <div class="notification-box-header">
+
+        </div>
+
+        <div class="notification-box-separator"></div>
+    </div>
 </template>
