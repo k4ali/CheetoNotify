@@ -7,12 +7,13 @@
     export default defineComponent({
         name: "Notification",
         props: {
-            image: String as () => string
+            image: String as () => string,
+            text: String as () => string
         },
         setup(props: INotification): INotificationComponentHandlers
         {
             const GetImagePath = (): string => (imagesPath + props.image!);
-            
+
             return {
                 GetImagePath
             }
@@ -28,5 +29,8 @@
         </div>
 
         <div class="notification-box-separator"></div>
+        <div class="notification-box-content-container">
+            <span v-if="text">{{ text }}</span>
+        </div>
     </div>
 </template>

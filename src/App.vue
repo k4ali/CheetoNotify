@@ -6,7 +6,8 @@
     import { INotification } from './typings/INotification';
 
     const defaultNotification: INotification = {
-        image: "saya.png"
+        image: "saya.png",
+        text: "This is a text lol"
     }
 
     export default defineComponent({
@@ -44,6 +45,7 @@
                 v-for="(notification, index) in (notificationStorage)" 
                 :key="index"
                 :image="notificationStorage[index].image"
+                :text="notificationStorage[index].text"
             />
         </div>
     </div>

@@ -6,6 +6,12 @@
     user-select: none;
 }
 
+@mixin margin-top-bottom
+{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 body, html, #root
 {
     margin: 0;
