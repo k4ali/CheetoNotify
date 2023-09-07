@@ -1,17 +1,12 @@
 <script lang="ts">
     import { Ref, defineComponent, ref } from 'vue'
+    import { IComponentHandlers } from  './typings/IAppComponentHandlers';
+    import { IComponentSetup } from  './typings/IAppComponentSetup';
     import Notification from './components/Notification.vue';
+    import { INotification } from './typings/INotification';
 
-    declare interface IComponentHandlers
-    {
-        showNotification: () => void; 
-        deleteNotification: (id: number) => void;
-    }
-
-    declare interface IComponentSetup
-    {
-        notificationStorage: Ref<string[]>;
-        handlers: IComponentHandlers;
+    const defaultNotification: INotification = {
+        image: "saya.png"
     }
 
     export default defineComponent({
@@ -19,10 +14,10 @@
         components: { 'Notification': Notification },
         setup(): IComponentSetup
         {
-            const notificationStorage: Ref<string[]> = ref<string[]>(["test"]);
+            const notificationStorage: Ref<INotification[]> = ref<INotification[]>([defaultNotification]);
             const handlers: IComponentHandlers = {
-                showNotification: () => {
-                    notificationStorage.value.push("test");
+                showNotification: (props: INotification) => {
+                    notificationStorage.value.push(props);
 
                     const id: number = notificationStorage.value.length;
                     setTimeout(() => {
@@ -45,7 +40,11 @@
 <template>
     <div class="notify-app">
         <div class="notifications-container">
-            <Notification v-for="(notification, index) in (notificationStorage)" :key="index"/>
+            <Notification 
+                v-for="(notification, index) in (notificationStorage)" 
+                :key="index"
+                :image="notificationStorage[index].image"
+            />
         </div>
     </div>
 </template>

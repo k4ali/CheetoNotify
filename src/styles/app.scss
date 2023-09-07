@@ -30,7 +30,17 @@
             .notification-box-header
             {
                 height: $notificationHeaderHeight;
-                background-color: #0000001a;
+                background: linear-gradient(90deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.01) 100%);;
+
+                .notification-box-header-image-container
+                {
+                    width: $notificationHeaderHeight;
+
+                    img
+                    {
+                        width: 100%;
+                    }
+                }
             }
 
             $notificationSeparatorHeight: 0.25vh;
