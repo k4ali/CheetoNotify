@@ -40,7 +40,7 @@
 <template>
     <div class="notify-app">
         <div class="notifications-container">
-            <Notification 
+            <Notification
                 v-for="(notification, index) in (notificationStorage)" 
                 :key="index"
                 :image="notificationStorage[index].image"
