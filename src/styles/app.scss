@@ -83,13 +83,11 @@
 }
 
 
-.animation-enter-active .notification-animation-parent,
-.animation-leave-active .notification-animation-parent {
-    transition: all 0.3s ease-in-out;
+.list-enter-active, .list-leave-active
+{
+    transition: all 0.2s ease-in-out;
 }
-
-.animation-enter-from .notification-animation-parent,
-.animation-leave-to .notification-animation-parent {
-    transform: translateX(3vw);
+.list-enter-from, .list-leave-to
+{
     opacity: 0;
 }

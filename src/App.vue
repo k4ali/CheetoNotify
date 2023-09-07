@@ -25,7 +25,7 @@
 
                 deleteNotification: (id: number) => {
                     const index = notificationStorage.value.findIndex((notification: INotification) => notification.id === id);
-                    if (index !== -1) notificationStorage.value.splice(index, 1);
+                    if (index >= 0) notificationStorage.value.splice(index, 1);
                 }
             };
 
@@ -39,16 +39,14 @@
 <template>
     <div class="notify-app">
         <div class="notifications-container">
-            <Transition name="animation">
-                <div class="notification-animation-parent">
-                    <Notification
-                        v-for="(notification, index) in (notificationStorage)" 
-                        :key="index"
-                        :image="notificationStorage[index].image"
-                        :text="notificationStorage[index].text"
-                    />
-                </div>
-            </Transition>
+            <TransitionGroup name="list">
+                <Notification
+                    v-for="(notification, index) in (notificationStorage)" 
+                    :key="index"
+                    :image="notificationStorage[index].image"
+                    :text="notificationStorage[index].text"
+                />
+            </TransitionGroup>
         </div>
 
         <button @click="handlers.showNotification({ text: Math.random().toString(36).substr(2, 8), image: 'saya.png' })">press just right here</button>
