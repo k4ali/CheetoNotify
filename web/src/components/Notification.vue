@@ -2,13 +2,16 @@
     import { defineComponent } from 'vue';
     import { INotification } from '../typings/INotification';
     import { INotificationComponentHandlers } from '../typings/INotificationComponentHandlers';
+    import { IPosition } from 'src/typings/IPosition';
 
-    const imagesPath: string = "/src/assets/images/";
+    const imagesPath: string = "/web/src/assets/images/";
     export default defineComponent({
         name: "Notification",
         props: {
             image: String as () => string,
-            text: String as () => string
+            text: String as () => string,
+            transitonTime: Number as () => number,
+            position: Object as () => IPosition
         },
         setup(props: INotification): INotificationComponentHandlers
         {
