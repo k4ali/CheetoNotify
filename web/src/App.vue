@@ -18,18 +18,18 @@
             const handlers: IComponentHandlers = {
                 showNotification: (props: INotification) => {
                     const id: number = nextNotificationId++;
-                    const notification: INotification = { ...props, id };
+                    const notification: INotification = { ...props, metadata: { id: id } };
                     
-                    notification.timer = setTimeout(() => {
+                    notification.metadata!.timer = setTimeout(() => {
                         handlers.deleteNotification(id);
-                        clearTimeout(notification.timer);
+                        clearTimeout(notification.metadata!.timer);
                     }, props.transitonTime || 7000);
 
                     notificationStorage.value.push(notification);
                 },
 
                 deleteNotification: (id: number) => {
-                    const index = notificationStorage.value.findIndex((notification: INotification) => (id === notification.id));
+                    const index = notificationStorage.value.findIndex((notification: INotification) => (id === notification.metadata!.id));
                     if (index < 0) return;
                     notificationStorage.value.splice(index, 1)
                 }

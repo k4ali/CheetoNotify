@@ -1,12 +1,17 @@
 import { IPosition } from "./IPosition";
 
+declare interface INotificationMetadata
+{
+    id: number;
+    timer?: NodeJS.Timeout;
+}
+
 export interface INotification
 {
-    id?: number;
     image?: string;
     title?: string;
     text?: string;
     transitonTime?: number;
-    timer?: NodeJS.Timeout;
     position?: IPosition;
+    metadata?: INotificationMetadata;
 }
