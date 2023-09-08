@@ -32,8 +32,9 @@ This is resource hasn't got tested so it might has bugs etc.. you can report the
 
 ![Preview_2](https://cdn.discordapp.com/attachments/854756500034945075/1149707658530668564/image.png)
 
-- No image + custom color
+No image + custom color
 ![Preview_3](https://cdn.discordapp.com/attachments/854756500034945075/1149781857127366797/image.png)
+
 &nbsp;
 
 © 2023-2024 RevengeBack. All rights reserved.
