@@ -11,10 +11,10 @@
         components: { 'Notification': Notification },
         setup(): IComponentSetup
         {
-            const notificationStorage: Ref<INotification[]> = ref<INotification[]>([]);
-            let nuiPosition: Ref<IPosition> = ref<IPosition>({ x: 0, y: 0 })
+            const notificationStorage: Ref<INotification[]> = ref<INotification[]>([/*{ text: "idc idk em.. ion need no hoes tu c qjreste le meilleur" }*/]);
+            let nuiPosition: Ref<IPosition> = ref<IPosition>({ x: 40, y: 50 })
+
             let nextNotificationId = 1;
-            
             const handlers: IComponentHandlers = {
                 showNotification: (props: INotification) => {
                     const id: number = nextNotificationId++;
