@@ -11,7 +11,8 @@
             image: String as () => string,
             text: String as () => string,
             transitonTime: Number as () => number,
-            position: Object as () => IPosition
+            position: Object as () => IPosition,
+            title: String as () => string
         },
         setup(props: INotification): INotificationComponentHandlers
         {
@@ -29,6 +30,7 @@
             <div class="notification-box-header-image-container" v-if="image">
                 <img :src="GetImagePath()" draggable="false">
             </div>
+            <div class="notification-box-header-title-container" v-if="title"><span>{{ title! }}</span></div>
         </div>
 
         <div class="notification-box-separator"></div>

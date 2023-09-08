@@ -65,12 +65,13 @@
         <div class="notifications-container" v-bind:style="{ bottom: nuiPosition.y.toString() + 'vh', left:nuiPosition.x.toString() + 'vw' }">
             <TransitionGroup name="list">
                 <Notification
-                    v-for="(notification, index) in (notificationStorage)" 
+                    v-for="(notification, index) in (notificationStorage)"
                     :key="index"
                     :image="notificationStorage[index].image"
                     :text="notificationStorage[index].text"
                     :transiton-time="notificationStorage[index].transitonTime"
                     :position="notificationStorage[index].position"
+                    :title="notificationStorage[index].title"
                 />
             </TransitionGroup>
         </div>

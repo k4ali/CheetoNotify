@@ -28,16 +28,28 @@
             $notificationHeaderHeight: 2.75vh;
             .notification-box-header
             {
+                display: flex;
                 height: $notificationHeaderHeight;
                 background: linear-gradient(90deg, rgba(0, 0, 0, 0.45) 0%, rgba(0,0,0,0.01) 100%);;
 
                 .notification-box-header-image-container
                 {
                     width: $notificationHeaderHeight;
+                    img { width: 100% }
+                }
 
-                    img
+                .notification-box-header-title-container
+                {
+                    display: flex;
+                    height: 100%;
+                    
+                    span
                     {
-                        width: 100%;
+                        @include margin-top-bottom;
+                        margin-left: 0.35vw;
+                        font-size: 1.3vh;
+                        font-family: 'Montserrat', sans-serif;
+                        color: #ffffffab;
                     }
                 }
             }
