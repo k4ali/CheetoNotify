@@ -2,6 +2,8 @@
 CheetoNotify is a NUI notifications scripts that runs using Vue & vite, you can set multiple parameters like title, text, image, duration etc.. (wip)
 
 # How to use
+If you want to add your images, just add em to /web/src/assets/images/ and thats it, for exemple at image parameter -> "image.png"; or you can also let it undefined for no image 
+
 In an other resource fom client-side you can use thoses exports:
 - Show notification
 ```lua
