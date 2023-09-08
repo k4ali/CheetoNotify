@@ -40,6 +40,6 @@ function CheetoNotify:show(notificationData)
     })
 end
 
-exports('showNotification', function (parameters)
-    CheetoNotify:show(parameters)
+exports('showNotification', function (notificationData)
+    CheetoNotify:show(notificationData)
 end)

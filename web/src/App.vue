@@ -11,7 +11,7 @@
         components: { 'Notification': Notification },
         setup(): IComponentSetup
         {
-            const notificationStorage: Ref<INotification[]> = ref<INotification[]>([/*{ text: "idc idk em.. ion need no hoes tu c qjreste le meilleur" }*/]);
+            const notificationStorage: Ref<INotification[]> = ref<INotification[]>([/*{ text: "idc idk em.. ion need no hoes tu cdqsddqsdqsd" }*/]);
             let nuiPosition: Ref<IPosition> = ref<IPosition>({ x: 40, y: 50 })
 
             let nextNotificationId = 1;
