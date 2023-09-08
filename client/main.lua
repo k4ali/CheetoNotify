@@ -29,7 +29,7 @@ local function GetMinimapAnchor()
 end
 
 ---@public
----@param notificationData? { text?: string; duration?: number; image?: string; }
+---@param notificationData? { title?: string; text?: string; duration?: number; image?: string; }
 function CheetoNotify:show(notificationData)
     local payload = notificationData or {};
     payload.position = { x = (GetMinimapAnchor().x * 100), y = (GetMinimapAnchor().y * 30) }
@@ -39,3 +39,8 @@ function CheetoNotify:show(notificationData)
         payload = payload
     })
 end
+
+exports('showNotification', function (title, text, image, duration)
+    local obj = { title = title, text = text, image = image, duration = duration };
+    CheetoNotify:show(obj)
+end)
