@@ -54,12 +54,11 @@
                 }
             }
 
-            $notificationSeparatorHeight: 0.25vh;
+            $notificationSeparatorHeight: 0.2vh;
             .notification-box-separator
             {
                 width: calc(100% - 1vh);
                 height: $notificationSeparatorHeight;
-                background: linear-gradient(90deg, rgba(143, 9, 37, 1) 0%, rgba(177, 22, 77, 1) 50%, rgba(177, 22, 77, 0.3) 80%, rgba(177, 22, 77, 0) 100%);
             }
 
             $notificationContentMinHeight: 3vh;

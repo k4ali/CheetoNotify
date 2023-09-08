@@ -7,7 +7,21 @@ If you want to add your images, just add em to /web/src/assets/images/ and thats
 In an other resource fom client-side you can use thoses exports:
 - Show notification
 ```lua
-exports.CheetoNotify:showNotification(title: string, text: string, image: string, duration: number);
+exports.CheetoNotify:showNotification(notificationData: INotification);
+```
+
+# Exemple
+```lua
+exports.CheetoNotify:showNotification({
+    title = 'Information',
+    text = 'this is a text',
+    duration = 6000,
+    image = 'image.png',
+    color = { r = 92, g = 65, b = 229  },
+    settings = {
+        enableSeparator = true
+    }
+})
 ```
 
 # Informations

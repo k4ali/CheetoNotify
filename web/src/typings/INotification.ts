@@ -1,9 +1,15 @@
+import { IColor } from "./IColor";
 import { IPosition } from "./IPosition";
 
-declare interface INotificationMetadata
+export interface INotificationMetadata
 {
-    id: number;
-    timer?: NodeJS.Timeout;
+    _id: number;
+    _timer?: NodeJS.Timeout;
+}
+
+export interface INotificationSettings
+{
+    enableSeparator?: boolean;
 }
 
 export interface INotification
@@ -13,5 +19,7 @@ export interface INotification
     text?: string;
     transitonTime?: number;
     position?: IPosition;
-    metadata?: INotificationMetadata;
+    color?: IColor;
+    settings?: INotificationSettings;
+    _metadata?: INotificationMetadata;
 }

@@ -18,18 +18,18 @@
             const handlers: IComponentHandlers = {
                 showNotification: (props: INotification) => {
                     const id: number = nextNotificationId++;
-                    const notification: INotification = { ...props, metadata: { id: id } };
+                    const notification: INotification = { ...props, _metadata: { _id: id } };
                     
-                    notification.metadata!.timer = setTimeout(() => {
+                    notification._metadata!._timer = setTimeout(() => {
                         handlers.deleteNotification(id);
-                        clearTimeout(notification.metadata!.timer);
+                        clearTimeout(notification._metadata!._timer);
                     }, props.transitonTime || 7000);
 
                     notificationStorage.value.push(notification);
                 },
 
                 deleteNotification: (id: number) => {
-                    const index = notificationStorage.value.findIndex((notification: INotification) => (id === notification.metadata!.id));
+                    const index = notificationStorage.value.findIndex((notification: INotification) => (id === notification._metadata!._id));
                     if (index < 0) return;
                     notificationStorage.value.splice(index, 1)
                 }
@@ -72,6 +72,8 @@
                     :transiton-time="notificationStorage[index].transitonTime"
                     :position="notificationStorage[index].position"
                     :title="notificationStorage[index].title"
+                    :color="notificationStorage[index].color"
+                    :settings="notificationStorage[index].settings"
                 />
             </TransitionGroup>
         </div>
